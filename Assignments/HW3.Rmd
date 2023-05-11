@@ -1,0 +1,173 @@
+
+# Intro to Data Science HW 3
+
+##### Copyright 2022, Jeffrey Stanton, Jeffrey Saltz, and Jasmina Tacheva
+
+```{r}
+# Enter your name here: 
+```
+
+### Attribution statement: (choose only one and delete the rest)
+
+```{r}
+# 1. I did this homework by myself, with help from the book and the professor.
+# 2. I did this homework with help from the book and the professor and these Internet sources:
+# 3. I did this homework with help from <Name of another student> but did not cut and paste any code.
+```
+
+### Reminders of things to practice from last week: 
+Make a data frame:		data.frame( ) <br>
+Row index of max/min:	which.max( )  which.min( )<br>
+Sort value or order rows: arrange( )	sort( )   order( )<br>
+Descriptive statistics: 	mean( ) sum( ) max( ) <br>
+Conditional statement:	if (condition)  true stuff  else  false stuff <br>
+
+### This Week: 
+Often, when you get a dataset, it is not in the format you want. You can (and should) use code to refine the dataset to become more useful. As Chapter 6 of Introduction to Data Science mentions, this is called ** data munging. ** In this homework, you will read in a dataset from the web and work on it (in a data frame) to improve its usefulness.
+
+## Part 1: Use read_csv( ) to read a CSV file from the web into a data frame:
+
+A.	Use R code to read directly from a URL on the web. Store the dataset into a new dataframe, called **testDF**. <br>
+The URL is:    <br>
+"https://data-science-intro.s3.us-east-2.amazonaws.com/NYS_COVID_Testing.csv" <br>
+**Hint:** use read_csv( ), not read.csv( ). This is from the **tidyverse package**. Check the help to compare them.
+
+```{r}
+
+```
+
+B.	Use View( ), head( ), and tail( ) to examine the **testDF** dataframe. <br>
+**Add a block comment that briefly describes what you see.**
+
+```{r}
+
+```
+
+## Part 2: Create new data frames based on a condition:
+
+A.	Use the table( ) command to summarize the contents of the **AgeCategory** variable in **testDF**. <br>
+**Write a comment interpreting what you see   how many age categories are there in the dataset and what is the proportion of observations in each?**
+
+```{r}
+
+```
+
+B. Terms like "senior citizens" can function as *othering* language which demeans the people it seeks to describe. We can use the **str_replace_all()** function from tidyverse to find all instances of **senior_citizens** in the **AgeCategory** variable and replace them with **older_adults**. 
+
+ <br>
+In this case, we want to search for **senior_citizens** and replace it with **older_adults** in **testDF$AgeCategory** - how can you use this information to overwrite the **AgeCategory** in the function below:
+
+```{r}
+ 
+```
+
+C.	Create a dataframe (called **olderAdults**) that contains only the rows (observations) for which the value in the **AgeCategory** variable (column) is **older_adults**. Hint: Use subsetting.
+
+```{r}
+
+```
+
+D.	Use the dim() command on **olderAdults** to confirm that the data frame contains **2,686** observations and **5** columns/variables.
+
+```{r}
+
+```
+
+E.	Use **subsetting** to create a new dataframe that contains only the observations for which the value in the **AgeCategory** variable is **young_adults**. The name of this new df should be **youngAdults**.
+
+```{r}
+
+```
+
+F. Create one last data frame which only contains the observations for **children** in the **AgeCategory** variable of **testDF**. Call this new df **childrenDF**.
+
+```{r}
+
+```
+
+## Part 3: Analyze the numeric variables in the **testDF** dataframe.
+
+A.	How many **numeric variables** does the dataframe have? You can figure that out by looking at the output of **str(testDF)**. 
+
+```{r}
+
+```
+
+B.	What is the average number of total daily tests? Hint: Can you think of a mathematical function we've come across before to use on the **TotalTests** variable?
+
+```{r}
+
+```
+
+C.	How many tests were performed in the row with the highest number of total daily tests? What age category do they correspond to? 
+
+```{r}
+
+```
+
+D. How many positive cases were registered in the row with the highest number of positive cases? What age category do they correspond to?
+
+```{r}
+
+```
+
+E.	What is the total number of positive cases in **testDF**?
+
+```{r}
+
+```
+
+F. Create a new variable in **testDF** which is the ratio of **PostiveCases** to **TotalTests**. Call this variable **PositivityRate** and explain in a comment what information it gives us.
+
+```{r}
+
+```
+
+G. What is the average positivity rate in **testDF**? Hint: Use the **mean()** function on the new variable you created in F.
+
+```{r}
+
+```
+
+## Part 4:  Create a function to automate the process from F-G:
+
+A.	The following function should work most of the time. Make sure to run this code before trying to test it. That is how you make the new function known to R. **Add comments to each line explaining what it does:**
+
+```{r}
+calculatePositivity <- function(dataset) {
+  dataset$PositivityRate <- dataset$PositiveCases/dataset$TotalTests
+  avePositivity <- mean(dataset$PositivityRate)
+  return(avePositivity)
+}
+```
+
+B.	Run your new function on the **testDF** dataframe. Is the output of the function consistent with the output in Step G above? Explain.
+
+```{r}
+calculatePositivity(testDF)
+```
+
+C. Run the function on the **olderAdults** df you created earlier.
+
+```{r}
+
+```
+
+D.	Run the function on the **youngAdults** df.
+
+```{r}
+
+```
+
+E. Lastly, run the posivity function on the **childrenDF** dataframe.
+
+```{r}
+
+```
+
+F. In a comment, describe what you observe across these 3 datasets - which age group exhibits the highest positivity rate? How do these numbers compare to the **baseline** positivity rate in **testDF**?
+
+```{r}
+
+```
+

@@ -1,0 +1,148 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+## Intro to Data Science - HW 1
+##### Copyright 2022, Jeffrey Stanton, Jeffrey Saltz, and Jasmina Tacheva
+
+```{r}
+# Enter your name here: 
+```
+
+### Attribution statement: (choose only one and delete the rest)
+
+```{r}
+# 1. I did this homework by myself, with help from the book and the professor.
+# 2. I did this homework with help from the book and the professor and these Internet sources:
+# 3. I did this homework with help from <Name of another student> but did not cut and paste any code.
+```
+
+Define a variable:
+
+```{r}
+value <- 150
+```
+
+Print the content of this new variable:
+
+```{r}
+
+```
+
+Define the following vectors, which represent the **hospital capacity** (measured in number of hospital beds) and **number of colleges** in each of the five counties in Central New York (CNY)   **Cayuga**, **Cortland**, **Madison**, **Onondaga**, and **Oswego**, in this order (e.g. the first number in the **capacity** vector suggests there are 124 hospital beds in Cayuga county):
+
+```{r}
+capacity <- c(124, 70, 51, 1403, 86)
+colleges <- c(2, 2, 3, 9, 2)
+```
+
+# Part 1: Calculating statistics using R  
+
+A.	Show the number of observations in the **capacity** vector with the length() function: 
+
+```{r}
+
+```
+
+B.	Show the number of observations in the **colleges** vector with the length() function:
+
+```{r}
+
+```
+
+C.	Calculate the average number of colleges in CNY using the mean() function:
+
+```{r}
+
+```
+
+D.	Calculate the total number of colleges in CNY using the sum() function:
+
+```{r}
+
+```
+
+E.	Calculate the average CNY hospital capacity using the mean() function:
+
+```{r}
+
+```
+
+F.	Calculate the total hospital capacity in CNY using the sum() function:
+
+```{r}
+
+```
+
+G.	Calculate the average number of colleges in CNY again, this time using **the results from steps B & D**:
+
+```{r}
+
+```
+
+H.	Calculate the average CNY hospital capacity again, this time using **the results from steps A & F**:
+
+```{r}
+
+```
+
+# Part 2: Using the max/min and range functions in R
+
+I.	How many colleges does the county with most colleges have? Hint: Use the max() function:
+
+```{r}
+
+```
+
+J.	What is the hospital capacity of the county with the smallest number of hospital beds in CNY? **Hint:** Use the min() function:
+
+```{r}
+
+```
+
+K.	Display the number of beds in the county with the highest hospital capacity and the county with the lowest hospital capacity together, using a single command. **Hint:** Use the range() function:
+
+```{r}
+
+```
+
+# Part 3: Vector Math
+
+L.	Create a new vector called **lowerCap**, which is the current hospital capacity of each county **- 10** (each county has 10 less hospital beds):
+
+```{r}
+
+```
+
+M.	 Calculate the average of **lowerCap**:
+
+```{r}
+
+```
+
+N. Create another vector called **megaCap**, which is the original hospital capacity in each county (stored in **capacity**) plus **value** (the variable we declared in the beginning of this assignment). 
+
+```{r}
+
+```
+
+O. Print the content of **megaCap**:
+
+```{r}
+
+```
+
+P.	In a variable called **bigCap**, store all the hospital numbers from the original **capacity** vector which are **greater than 80** (using **subsetting** in R):
+
+```{r}
+
+```
+
+Q.	Print the length of **bigCap** and explain in a comment how many counties have more than 80 hospital beds:
+
+```{r}
+
+```
+

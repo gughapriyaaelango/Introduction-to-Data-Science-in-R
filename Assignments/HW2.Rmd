@@ -1,0 +1,118 @@
+
+# Intro to Data Science - HW 2
+
+##### Copyright 2022, Jeffrey Stanton, Jeffrey Saltz, and Jasmina Tacheva
+
+```{r}
+# Enter your name here: 
+```
+
+### Attribution statement: (choose only one and delete the rest)
+
+```{r}
+# 1. I did this homework by myself, with help from the book and the professor.
+# 2. I did this homework with help from the book and the professor and these Internet sources:
+# 3. I did this homework with help from <Name of another student> but did not cut and paste any code.
+```
+
+### Reminders of things to practice from last week: 
+Assignment arrow:  		<- <br>
+The combine command: 	c( ) <br>
+Descriptive statistics: 	mean( ) sum( ) max( ) <br>
+Arithmetic operators:		+ - * /<br>
+Boolean operators:		>    <    >=    <=   ==   !=  <br>
+
+**This Week:** Explore the **quakes** dataset (which is included in R). 
+
+
+<br>
+<br>
+
+**Step 0:** Prepare the data <br>
+A. Copy the **quakes** dataset into a new dataframe (call it **myQuakes**), so that if you need to start over, you can do so easily (by copying **quakes** into **myQuakes** again). Summarize the variables in **myQuakes** using an R command. Also, explore the structure of the dataframe - using another R command. In a brief comment, describe what this dataset is about based on your analysis of the variables in it. 
+
+```{r}
+
+```
+
+**Step 1:** Explore the earthquake magnitude variable called **mag**  <br>
+
+A.	What is the average magnitude? Use mean() or summary():
+
+```{r}
+
+```
+
+B.	What is the magnitude of the smallest earthquake? Use min() or summary() and save the result in a variable called **minQuake**:
+
+```{r}
+
+```
+
+C.	What is the magnitude of the largest earthquake? Use max() or summary() and save the result in a variable called **maxQuake**:
+
+```{r}
+
+```
+
+D.	Output the **fourth row** of the dataframe:
+
+```{r}
+
+```
+
+E. Create a new dataframe, with only the rows where the **magnitude is greater than 4**. How many rows are in that dataframe (report this number using code, do not count by looking at the output):
+
+```{r}
+
+```
+
+F.	Using the **arrange()** function, create a **sorted dataframe** based on magnitude and store it in **quakeSorted1**. Explain how this function works.
+
+```{r}
+
+```
+
+G. Now create a second sorted dataframe called **quakeSorted2** using the **order()** function. Explain in a comment how the function works.
+
+```{r}
+
+```
+
+H. Print the top rows of each of the sorted dataframes using the **head()** function and explain in a comment what you see - did the two sorting functions produce a similar result?
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+I.	What are the latitude and longitude of the quake reported by the largest number of stations?  
+
+```{r}
+
+```
+
+J.	What are the latitude and longitude of the quake with the smallest magnitude?  
+
+```{r}
+
+```
+
+**Step 3:** Using conditional if statements <br>
+
+A.	 Test if **maxQuake** is greater than 6 (output  yes  or  no ) <br>
+**Hint:** Try modifying the following code in R: 
+
+```{r}
+if  (100 < 150) "100 is less than 150" else "100 is greater than 150"
+```
+
+B.	 Following the same logic, test if **minQuake** is less than 3 (output  yes  or  no ):
+
+```{r}
+
+```
+

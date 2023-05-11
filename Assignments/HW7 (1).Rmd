@@ -1,0 +1,126 @@
+
+# Intro to Data Science - HW 7
+##### Copyright 2022, Jeffrey Stanton, Jeffrey Saltz, and Jasmina Tacheva
+
+```{r}
+# Enter your name here: 
+```
+
+
+### Attribution statement: (choose only one and delete the rest)
+
+```{r}
+# 1. I did this homework by myself, with help from the book and the professor.
+# 2. I did this homework with help from the book and the professor and these Internet sources:
+# 3. I did this homework with help from <Name of another student> but did not cut and paste any code.
+```
+
+In our last assignment, we explored **data visualization** in R using the **ggplot2** package. This homework continues to use ggplot, but this time, with maps.  In addition, we will merge datasets using the built-in **merge( )** function, which provides a similar capability to a **JOIN in SQL** (don't worry if you do not know SQL). Many analytical strategies require joining data from different sources based on a ** key **   a field that two datasets have in common. 
+
+## Step 1: Load the food scarcity data
+
+A. Limited access to supermarkets, supercenters, grocery stores, or other sources of healthy and affordable food may make it harder for some people to eat a healthy diet. There are many ways to measure food store access and many ways to define which areas are low access   neighborhoods that lack healthy food sources. In this homework assignment, we will focus on **accessibility to sources of healthy food, as measured by the distance to a store** in an area.
+
+This dataset contains a variable, **LAPOP1_10**, which denotes the number of people living beyond 1 mile for urban areas or 10 miles for rural areas from a supermarket in all counties of the United States.
+
+Read the data from the following URL: https://data-science-intro.s3.us-east-2.amazonaws.com/FoodInsecurity.csv
+
+<br> Store it in a dataframe called **dfIns** and examine it, describing in a comment what you see.
+
+
+
+
+```{r}
+
+```
+
+B.	Calculate the **average** of **MedianFamilyIncome** in the dataframe. Why is using mean() directly not working? Find a way to correct the data type of this variable so you can calculate the average (and then calculate the average). If you still cannot get a value for the mean, you may need to take care of the missing values in this variable - the **imputeTS** package we have used before might help.
+
+Hint: use **str(dfIns)** or **glimpse(dfIns)** to help understand the dataframe
+
+```{r}
+
+```
+
+C.	What is the population of the smallest county in the dataframe? Which state is it in?
+
+```{r}
+
+```
+
+D. It is hard to understand the significance of the values in **LAPOP1_10** (remember, this is the variable that shows the number of people living too far from a store and thus, considered at risk of food insecurity) without a reference point. Create a new column in **dfIns** called **insecurityRatio** which is the ratio of **LAPOP1_10** to **Pop2010** (the county's population) and describe in a comment what it means.
+
+```{r}
+
+```
+
+E. Provide descriptive statistics for this new variable (e.g. min, max, mean, and standard deviation) and interpret them briefly. Then generate a histogram using ggplot, to confirm (or futher explore) those interpretations.
+
+```{r}
+
+```
+
+## Step 2: Merge the food insecurity data with the city data
+
+A.	Read the following JSON file, https://intro-datascience.s3.us-east-2.amazonaws.com/cities.json and store it in a variable called **pop**.
+
+Examine the resulting pop dataframe and add comments explaining what each column contains.
+
+```{r}
+
+```
+
+B.	To successfully merge the dataframe **dfIns** with the **pop** dataframe, we need to identify a **column they have in common** which will serve as the ** key ** to merge on. One column both dataframes have is the **city column** (in the case of **dfIns**, it's called **Largest_city**. However, the values in **city** may not necessarily be unique - there may be cities in different states that have the same name. It is far less likely to have two cities with identical names in the same state, however. Therefore, the **city_state** variable in **dfIns** looks like a good candidate to merge on. The only problem is that there is no such variable in the **pop** df per se. Let's go ahead and create it by concatenating the **city** and **state** columns in **pop**. The following code should work - explain in a comment what it does:  
+
+```{r}
+pop$city_state<-paste0(pop$city,", ",pop$state)
+```
+
+C.	Merge the two dataframes (using the **city_state column** from both dataframes), storing the resulting dataframe in **dfNew**.
+
+```{r}
+
+```
+
+D.	Review the structure of **dfNew** and explain the columns (aka attributes) in that dataframe.
+
+```{r}
+
+```
+
+## Step 3: Visualize the data
+
+E.	Plot points (on top of a map of the US) for **each city**. Have the **color** represent the **insecurityRatio**.
+
+```{r}
+
+```
+
+F.	Add a block comment that critiques the resulting map. 
+
+```{r}
+
+```
+
+## Step 4: Group by State
+
+A.	Use **group_by()** and **summarise** to make a dataframe of state-by-state average **insecurityRatio**. Store the result in **dfSimple**.
+
+```{r}
+
+```
+
+B.	Name the most and least food-insecure states in **dfSimple** and show the code you used to determine them.
+
+```{r}
+
+```
+
+## Step 5: Create a map of the U.S.,  with the color of the state representing insecurityRatio
+
+A. Make sure to expand the limits correctly and that you have used **coord_map** appropriately. Comment on the resulting map - what insight can you get from it?
+
+```{r}
+
+```
+

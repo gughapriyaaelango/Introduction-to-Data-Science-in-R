@@ -1,0 +1,188 @@
+
+# Intro to Data Science - HW 6
+
+
+##### Copyright Jeffrey Stanton 2022, Jeffrey Saltz, and Jasmina Tacheva
+
+```{r}
+# Enter your name here: 
+```
+
+
+### Attribution statement: (choose only one and delete the rest)
+
+```{r}
+# 1. I did this homework by myself, with help from the book and the professor.
+# 2. I did this homework with help from the book and the professor and these Internet sources:
+# 3. I did this homework with help from <Name of another student> but did not cut and paste any code.
+```
+
+**This module:** **Data visualization** is important because many people can make sense of data more easily when it is presented in graphic form. As a data scientist, you will have to present complex data to decision makers in a form that makes the data interpretable for them. From your experience with Excel and other tools, you know that there are a variety of **common data visualizations** (e.g., pie charts). How many of them can you name? <br>
+
+The most powerful tool for data visualization in R is called **ggplot2**. Written by computer/data scientist **Hadley Wickham**, this ** graphics grammar ** tool builds visualizations in layers. This method provides immense flexibility, but takes a bit of practice to master.
+
+## Step 1: Make a copy of the data
+
+A.	Read the **New York State COVID Testing** dataset we used in HW 3 & 4 from this URL: https://data-science-intro.s3.us-east-2.amazonaws.com/NYS_COVID_Testing_.csv <br>
+into a new dataframe called **df**. 
+
+
+```{r}
+
+```
+
+B.	Your dataframe, **df**, contains a so-called **multivariate time series**: a sequence of measurements on COVID tests and results captured repeatedly over time (March 2020 - January 2022). Familiarize yourself with the nature of the time variable **TestDate**.
+<br>How often were these measurements taken (in other words, at what frequency were the variables measured)? Put your answer in a comment. 
+
+```{r}
+
+```
+
+C. What is the data type of **TestDate**? Explain in a comment.
+
+```{r}
+
+```
+
+D. To properly display the **TestDate** values as dates in our plots, we need to convert **TestDate** to date format with the **as.Date()** function. Run the code below and check the data type of the variable again to make sure it is not coded as text anymore:
+
+```{r}
+df$TestDate<-as.Date(df$TestDate, format = "%m/%d/%Y")
+```
+
+```{r}
+
+```
+
+## Step 2: Clean up the NAs and create subsets
+
+A.	It is always good practice, when you first start working with a dataset, to explore it for missing values. Check the **TotalTests** and **PositiveCases** for missing values. Are there any? What does empty output suggest about the number of missing observations?
+
+Hint: use *is.na()* 
+
+```{r}
+
+```
+
+B. There is an R package called **imputeTS** specifically designed to repair missing values in time series data. We will use this instead of the simpler way, **mean substitution**, because it tends to be more accurate.
+<br>The **na_interpolation()** function in this package takes advantage of a unique characteristic of time series data: neighboring points in time can be used to  guess  about a missing value in between. <br>Use this function on each of the two numeric variables in **df** and don't forget to **update** them by overwriting them with the output of the **na_interpolation()** function. 
+
+```{r}
+
+```
+
+C. Run the code from A to make sure there is no more missing data:
+
+```{r}
+
+```
+
+D. As we've done before, let's create a new variable which is the ratio of **PositiveCases** to **TotalTests** - save it as an additional variable in **df** called **PositivityRate**:
+
+```{r}
+
+```
+
+E. Create a subset of **df** containing **only the records for children**. Save it in a new dataframe called **dfChildren**. Make sure this new df has **2,010 observations and 8 variables**.
+
+```{r}
+
+```
+
+F. Create a subset of **df** containing only the records for **young adults**. Save it in a new dataframe called **dfYA**. 
+
+```{r}
+
+```
+
+G. Using the same logic, create 2 more subsets of **df**: one containing only the records for **middle-aged adults** (call it **dfMA**), and another one with only the data of **older adults** - **dfOA**. After this step, you should have a total of 4 subsets: 
+- dfChildren
+- dfYA
+- dfMA
+- dfOA
+
+```{r}
+
+```
+
+## Step 3: Use ggplot to explore the distribution of each variable
+**Don t forget to install and library the ggplot2 package.** Then: <br>
+
+A.	Create a histogram for **PositiveCases** in the **dfOA** dataframe (using **ggplot**). Be sure to add a title and briefly describe what the histogram means in a comment.
+
+```{r}
+
+```
+
+B.	Create histograms (using **ggplot**) of the **PositiveCases** variable in each of the other three subsets from Step 2G. <br>
+For each histogram, comment on its shape - what information can we glean from it?
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+## Step 4: Explore how the data changes over time
+A.	These data were collected in a period of almost 2 years. You can thus observe changes over time with the help of a line chart. Let's focus on the **dfOA** subset first: <br>
+Create a **line chart**, with **TestDate** on the X-axis and **PositivityRate** on the Y-axis.
+
+```{r}
+
+```
+
+B.	Next, create similar graphs for each of the other three subsets. Change the **color** of the line plots (any color you want).
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+C.	In a comment, talk about the insights you got from the line charts you created - can you spot any trends within and between the line charts?
+
+```{r}
+
+```
+
+D.	Finally, using the **dfOA** subset, create a **scatter plot**, showing **TotalTests** on the x axis, **PositiveCases** on the y axis, and having the **color and size** of the point represent **Year**.
+
+```{r}
+
+```
+
+E. Create a similar scatter plot for the **dfYA** subset. 
+
+```{r}
+
+```
+
+F.	Create two barcharts (**using ggplot**) that you think would be interesting by exploring any attribute in two of the dataframes that you have already created via a barchart.
+
+```{r}
+
+```
+
+G.	Interpret these visualizations, what insight do they provide?
+
+```{r}
+
+```
+
+
