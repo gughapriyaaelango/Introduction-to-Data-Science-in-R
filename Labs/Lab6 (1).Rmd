@@ -1,0 +1,104 @@
+
+# Intro to Data Science - Lab 6
+##### Copyright 2022, Jeffrey Stanton and Jeffrey Saltz   Please do not post online.
+
+## Week 6 - Using	ggplot	to	Build	 Complex	Data	Displays
+
+```{r}
+# Enter your name here: 
+```
+
+### Please include nice comments. <br>
+### Instructions: 
+Run the necessary code on your own instance of R-Studio.
+
+### Attribution statement: (choose only one and delete the rest)
+
+```{r}
+# 1. I did this lab assignment by myself, with help from the book and the professor.
+# 2. I did this lab assignment with help from the book and the professor and these Internet sources:
+# 3. I did this lab assignment with help from <Name of another student> but did not cut and paste any code.
+```
+
+Creating	graphical	displays	of	data	is	an	essential	skill	for	all	data	scientists	because	so	much	of	what	data	scientists	do	involves	communicating	with	other	people	about	data.	The	**ggplot2**	package	developed	by	data	scientist	Hadley	Wickham (https://en.wikipedia.org/wiki/Hadley_Wickham)	provides	excellent	power	and	flexibility	for	graphically	displaying	data.	Whole	books	have	been	written	about	**ggplot2**	(e.g.:	https://www.springer.com/gp/book/9780387981413 ),	so	we	will	only	be	able	to	scratch	the	surface,	but	we	will	master	the	basic	 grammar 	that	you	need	in	order	to	use	this	
+package.	<br><br>For	this lab we	will	also	use	a	dataset	that	comes	delivered in R,	called	** economics **. It contains	574	 snapshots	of	U.S.	economic	conditions	between	1967	and	2014.<br><br>		
+Here	are	two lines	of	starter	code:	<br><br>
+
+
+```
+MyPlot <- ggplot(economics, aes(x=date))
+myPlot <- myPlot + geom_line(aes(y=psavert))
+```
+
+
+1. Run	these	two lines	of	code below.	What	happens?	How	do	you	actually	 invoke 	the plot	
+(i.e.,	how	do	you	get	it	to	draw	in	the	plot	window)?
+
+```{r}
+
+```
+
+2. Run `help("economics")` to	find	out	the	meaning	of	the	**psavert**	variable.
+
+```{r}
+
+```
+
+3. Examine	the	plot	to	estimate	when	the	personal	savings	rate	reached	its maximum	
+value.	Also	examine	the	plot	to	estimate	when	the	personal	savings rate	reached	its	
+minimum	value.
+
+```{r}
+
+```
+
+4. Use	**which.max(	)**	and	**which.min(	)**	to	verify	your	guesses	from	problem	3.
+
+```{r}
+
+```
+
+5. Change	the	color	of	the	plot	line	to	green.<br><br>	**Hint:** Changing	a	line	to	a	constant color	happens	in	the	specification	of	the	**geometry**.
+
+```{r}
+
+```
+
+6. Add	a	title	to	the	plot	with	the	**ggtitle("Put	title	here")**	sub-command.	The	title **"Personal	Savings	Rate:	1967-2014"** would	be	a	good	choice.
+
+```{r}
+
+```
+
+7. Add	another	data	series	to	your	plot	to	show	the	variable	**uempmed**	as	a	red line.
+
+```{r}
+
+```
+
+8. Change	the	title	of	the	plot	to	mention	both	variables.
+
+```{r}
+
+```
+
+9. You	can	modify	the	axis	labels	in	a	ggplot	with	**ylab(	)**	and	**xlab(	)**	subcommands.
+Change	the	axis	labeling	as	needed	to	account	for	plotting	both **psavert**	and **uempmed**	 in	the	same	window.
+
+```{r}
+
+```
+
+10. Create	one	last	plot,	creating	a	scatter	plot,	having	the	**unemploy** on	the	x-axis, **psavert**	
+on	the	yaxis.	Color	each	point	based	on	the	**uempmed**.
+
+```{r}
+
+```
+
+11. Interpret	(using comments in R) what	you	see	in	this	last	graph.
+
+```{r}
+
+```
+

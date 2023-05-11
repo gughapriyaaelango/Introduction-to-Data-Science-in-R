@@ -1,0 +1,110 @@
+
+# Intro to Data Science - Lab 8
+##### Copyright 2022, Jeffrey Stanton and Jeffrey Saltz   Please do not post online.
+
+## Week 8 - Linear Models
+
+```{r}
+# Enter your name here: 
+```
+
+### Please include nice comments. <br>
+### Instructions: 
+Run the necessary code on your own instance of R-Studio.
+
+### Attribution statement: (choose only one and delete the rest)
+
+```{r}
+# 1. I did this lab assignment by myself, with help from the book and the professor.
+# 2. I did this lab assignment with help from the book and the professor and these Internet sources:
+# 3. I did this lab assignment with help from <Name of another student> but did not cut and paste any code.
+```
+
+**Linear	modeling**,	also	referred	to	as	**regression	analysis**	or	multiple regression **bold text**,	is	a	technique	for	fitting	a	line,	plane,	or	higher	order	linear	object	to	data.	<br><br>In	their	simplest	form,	linear	models	have	one	metric	**outcome	variable**	and	
+one	or	more	**predictor	variables**	(any	combination	of	metric	values,	ordered	
+scales	such	as	ratings,	or	dummy	codes).			<br><br>
+
+Make	sure	to	library	the	**MASS**	and	**ggplot2** packages	before	running	the	following:	<br><br>
+
+
+```
+ggplot(data=Boston) + aes(x=rm, y=medv) + geom_point() +
+ geom_smooth(method="lm", se=FALSE)
+```
+
+
+
+```{r}
+
+```
+
+1. Explore	this	dataset	descrption	by	typing	`?Boston` in a code cell.
+
+```{r}
+
+```
+
+2. The graphic you just created fits a best line to a cloud of points. Copy and
+modify the code to produce a plot where ** crim ** is the x variable instead of ** rm**. 
+
+```{r}
+
+```
+
+3. Produce a histogram and descriptive statistics for **Boston$crim**. Write a
+comment describing any anomalies or oddities.
+
+```{r}
+
+```
+
+4. Produce a linear model, using the **lm( )** function where **crim** predicts **medv**.<br><br>
+Remember that in R s formula language, the **outcome variable** comes first and is
+separated from the predictors by a **tilde**, like this: `medv ~ crim`<br><br>
+Try to get in the habit of storing the output object that is produced by lm and
+other analysis procedures. For example, I often use **lmOut <- lm( . . .)**
+
+```{r}
+
+```
+
+5. Run a **multiple regression** where you use **rm**, **crim**, and **dis** (distance to Boston employment centers). You will use all three predictors in one model with this
+formula:<br><br> `medv ~ crim + rm + dis` <br><br>Now run three separate models for each
+independent variable separate.
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+6. Interpret	the	results	of	your	analysis	in	a	comment.	Make	sure	to	mention	the	**p-value**,	the	**adjusted	R-squared**,	the	list	of **significant	predictors**	and	the	**coefficient** for	each	significant	predictor.
+
+```{r}
+
+```
+
+7. Create	a	one-row	**data	frame**	that	contains	some	plausible	values	for	the predictors.	For	example,	this	data	frame	contains	the	median	values	for	each predictor:<br><br> `predDF <- data.frame(crim = 0.26, dis=3.2, rm=6.2)`<br><br>
+The numbers used here were selected randomly by looking at min and max data
+of the variables.
+
+```{r}
+
+```
+
+8. Use	the	**predict( )** command	to	predict	a	new	value	of	**medv** from	the	one-row	data	frame.	If	you	stored	the	output	of	your	lm	model	in **lmOut**,	the command	would	look	like	this:<br><br>	`predict(lmOut, predDF)`
+
+```{r}
+
+```
+

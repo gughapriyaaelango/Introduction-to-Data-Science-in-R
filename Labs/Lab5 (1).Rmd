@@ -1,0 +1,130 @@
+
+# Intro to Data Science - Lab 5
+##### Copyright 2022, Jeffrey Stanton and Jeffrey Saltz   Please do not post online.
+
+## Week 5 - Obtaining	and	Using	Data	from	a	JSON	API	
+
+```{r}
+# Enter your name here: 
+```
+
+### Please include nice comments. <br>
+### Instructions: 
+Run the necessary code on your own instance of R-Studio.
+
+### Attribution statement: (choose only one and delete the rest)
+
+```{r}
+# 1. I did this lab assignment by myself, with help from the book and the professor.
+# 2. I did this lab assignment with help from the book and the professor and these Internet sources:
+# 3. I did this lab assignment with help from <Name of another student> but did not cut and paste any code.
+```
+
+**JSON	(JavaScript	Object	Notation)**	provides	a	transparent,	user	friendly	
+data	exchange	format	that	many	organizations	use	to	make	their	data	available	over	
+the	web.	JSON	is	human	readable,	but	is	also	highly	structured,	and	its	support	for	
+nested	data	structures	makes	it	highly	flexible.<br> <br>	Today	we	will	use	JSON	to	obtain	data	from	the	**NYC	CitiBike	project**.	The	CitiBike	project	provides	an	application	
+programming	interface	(API)	that	members	of	the	public	can	access to	get	up-todate	information	on	the	status	of	more	than	800	bike	stations.	<br> <br>
+You	may	need	to	install	the	**RCurl**	and	**jsonlite**	packages	to	get	the	code	to	work.	<br> <br>
+
+
+
+```
+station_link <- 'https://gbfs.citibikenyc.com/gbfs/en/station_status.json'
+apiOutput <- getURL(station_link)
+apiData <- fromJSON(apiOutput)
+stationStatus <- apiData$data$stations
+cols <- c('num_bikes_disabled','num_docks_disabled', 'station_id',
+ 'num_ebikes_available', 'num_bikes_available', 'num_docks_available')
+stationStatus = stationStatus[,cols]
+```
+
+
+
+1. Explain	what	you	see	if	you	type	in	the	**station_link**	URL	into	a	browser	(in	a
+comment,	write	what	you	see)
+
+```{r}
+
+```
+
+2. Paste the code from above here and provide	a	comment	explaining	each	line	of	code.
+
+```{r}
+
+```
+
+3. Use	**str(	)**	to	find	out	the	structure	of	**apiOutput**	and	**apiData**.	Report (via	a
+comment) what	you	found	and	explain	the	difference	between	these	two	objects.
+
+```{r}
+
+```
+
+4. The	**apiOutput**	object	can	also	be	examined	with	a	custom	function	from	the **jsonlite**	package	called	**prettify(	)**.	Run	this	command	and	explain what	you
+found (in	a	comment).
+
+```{r}
+
+```
+
+5. Explain	**stationStatus**	(what	type	of	object,	what	information	is	available).
+
+```{r}
+
+```
+
+6. Generate	a	histogram	of	the	number	of	docks	available
+
+```{r}
+
+```
+
+7. Generate	a	histogram	of	the	number	of	bikes	available
+
+```{r}
+
+```
+
+8. How	many	stations	have	at	least	one	ebike?
+
+```{r}
+
+```
+
+9. Explore	stations	with	at	least	one	ebike	by	create	a	new	dataframe,	that	only	has
+stations	with	at	least	one	eBike.
+
+```{r}
+
+```
+
+10. Calculate	the	mean	of	** num_docks_available **	for	this	new	dataframe.
+
+```{r}
+
+```
+
+11. Calculate	the	mean	of	** num_docks_available **	for	for	the	full	** stationStatus **
+dataframe.	In	a	comment,	explain	how	different	are	the	two	means?
+
+```{r}
+
+```
+
+12. Create	a	new	attribute,	called	** stationSize **,	which	is	the	total	number	of	 slots 
+available	for	a	bike	(that	might,	or	might	not,	have	a	bike	in	it	now).	Run	a
+histogram	on	this	variable	and	review	the	distribution.
+
+```{r}
+
+```
+
+13. Use the	**plot(	)**	command	to produce	an	X-Y	scatter	plot	with	the	number	of
+occupied	docks	on	the	X-axis	and	the	number	of	available	bikes	on	the	Y-axis.
+Explain	the	results	plot.
+
+```{r}
+
+```
+

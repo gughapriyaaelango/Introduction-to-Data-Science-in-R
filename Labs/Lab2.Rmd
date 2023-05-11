@@ -1,0 +1,190 @@
+
+# Intro to Data Science - Lab 2
+##### Copyright 2022, Jeffrey Stanton and Jeffrey Saltz   Please do not post online.
+
+## Week 2 - Sorting Data and Ordering a Data Frame
+
+```{r}
+# Enter your name here: 
+```
+
+### Please include nice comments. <br>
+
+### Attribution statement: (choose only one and delete the rest)
+
+```{r}
+# 1. I did this lab assignment by myself, with help from the book and the professor.
+# 2. I did this lab assignment with help from the book and the professor and these Internet sources:
+# 3. I did this lab assignment with help from <Name of another student> but did not cut and paste any code.
+```
+
+1. Make	a	copy	of	the	built-in	iris	data	set	like	this:<br>
+`myIris	<-	iris`
+
+```{r}
+
+```
+
+2. Get	an	explanation	of	the	contents	of	the	data	set	with	the	**help()**	function:<br>
+`help("iris")`
+
+```{r}
+
+```
+
+3. Explore	**myIris**	via the	**str()**	and	**glimpse()**	functions	(note:	you	need	to	install	and
+library	** tidyverse **	to	use	**glimpse()**).	Which	do	you	think	is	better?	Why? Explain in a comment.
+
+```{r}
+
+```
+
+4. Summarize	the	variables	in	your	copy	of	the	data	set,	like	this:<br>
+`summary(myIris)`
+
+```{r}
+
+```
+
+5. The	**summary()**	command	provided	the	mean	of	each	numeric	variable.	Choose
+the	variable	with	the	highest	mean and	list	its	contents.	Any
+variable	can	be	echoed	to	the	console	simply	by	typing	its	name.	Here s	an
+example	that	echoes	the	variable	with	the	lowest	mean:<br>
+`myIris$Petal.Width`
+
+```{r}
+
+```
+
+6. Now	sort	that attribute by	calling	the	**sort()**	function	and	supplying	that	variable.
+Remember	to	choose	the	variable	with	the	highest	mean.
+
+```{r}
+
+```
+
+7. Now	repeat	the	previous	command,	but	this	time	use	the	**order()**	function,	again
+using the	variable	with	the	highest	mean.
+
+```{r}
+
+```
+
+8. Write	a	comment	in	your	R	code	explaining	the	difference	between	**sort()**	and
+**order()**.	Be	prepared	to	explain	this	difference	to	the	class.
+
+```{r}
+
+```
+
+9. Now	use	the	**order()**	command	to	reorder	the	whole	data	frame, and	store	the	new
+dataframe	in	a	variable	called	** sortedDF **:
+
+```{r}
+
+```
+
+10. Now	sort	the	dataframe	using	**arrange()**,	which	is	part	of	the	**tidyverse**	package.
+This	time,	sort	based	the attribute	with	the	lowest mean.	Store	the	new
+dataframe	in	a	variable	called	** sortedDF1 **
+
+```{r}
+
+```
+
+11. Finally,	use	**head()**	to	examine	your	reordered	data	frames	and	be	prepared	to
+report	on	the	first	few	rows
+
+
+```{r}
+
+```
+
+12. What	does	the	following	line	of	code	do?<br>
+`myIris [	,	1]`
+
+```{r}
+
+```
+
+13. What	is	the	difference	(if	any)	between:<br>
+`myIris [	,	"Sepal.Length"]` and <br> 
+`myIris $Sepal.Length`
+
+```{r}
+
+```
+
+14. Write	the	R	code	that	outputs	the	** Sepal.Length **	attribute	values,	using	the **select()**	command.
+
+```{r}
+
+```
+
+15. Create	a	new	column	(called	** Ave.Length **)	in	**myIris**,	which,	for	each	row,	is	the average	of	**Sepal.Length**	and	**Petal.Length**.
+
+```{r}
+
+```
+
+16. What	does	the	following	line	of	code	do:<br>
+`which.min(myIris$Petal.Length)`
+
+```{r}
+
+```
+
+17. Using	the	code	from	the	previous	step,	output	the	row	(iris	observation)	with	the
+smallest	petal	length.
+
+```{r}
+
+```
+
+18. Create	a	new	dataframe,	with	just	the	**Petal.Length**	and	**Petal.Width** attributes
+
+```{r}
+
+```
+
+19. Create	a	new	dataframe,	using	the	**slice()**	function,	with	only	the	first	three	rows
+in	the	**myIris**	dataframe.
+
+```{r}
+
+```
+
+20. Create a	new	dataframe,	which	is	a	subset	of	**myIris**,	that	only	includes	rows
+where **Petal.Length is	less	than	1.4**,	store	in	**shortPetalDF**
+
+```{r}
+
+```
+
+21. How	many	rows	are	in	the	**shortPetalDF**?
+
+```{r}
+
+```
+
+22. The	homework	asks	you	to	create	a	conditional	statement	with	**if**	and	**else**.	A
+conditional	statement	is	part	of	a	larger	group	of	specialized	commands	that
+control	the	 flow 	of	a	program	 	what	command	gets	run	and	when.	You	can	get
+help	on	if,	else,	and	other	control	words.	Add	and	run	these	commands:<br>
+`help("if")` <br>
+`help("Control")`<br>
+Now	add	and	run	your	first	conditional	statement:<br>
+`if	(sum(myNumbers)	>	40)	print("The	sum	is	greater	than	40.")`
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+

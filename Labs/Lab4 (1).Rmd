@@ -1,0 +1,114 @@
+
+
+# Intro to Data Science - Lab 4
+##### Copyright 2022, Jeffrey Stanton and Jeffrey Saltz   Please do not post online.
+
+## Week 4 - Sampling
+
+```{r}
+# Enter your name here: 
+```
+
+### Please include nice comments. <br>
+### Instructions: 
+Run the necessary code on your own instance of R-Studio.
+
+### Attribution statement: (choose only one and delete the rest)
+
+```{r}
+# 1. I did this lab assignment by myself, with help from the book and the professor.
+# 2. I did this lab assignment with help from the book and the professor and these Internet sources:
+# 3. I did this lab assignment with help from <Name of another student> but did not cut and paste any code.
+```
+
+A key focus of this week is how to make inferences about populations based on samples. The
+essential logic lies in comparing a single instance of a statistic such as a sample mean to a
+distribution of such values. The comparison can lead to one of two conclusions   the sample
+statistic is either extreme or not extreme. But what are the thresholds for making this kind of
+judgment call (i.e., whether a value is extreme or not)? This activity explores that question.<br><br>
+**The problem is this:** You receive a sample containing the ages of 30 students. You are wondering
+whether this sample is a group of **undergraduates** (mean age = 20 years) or **graduates** (mean age
+= 25 years).<br><br> To answer this question, you must compare the mean of the sample you receive to a
+distribution of means from the population. The following fragment of R code begins the solution:<br><br>
+
+
+```
+set.seed(2)
+sampleSize <- 30
+studentPop <- rnorm(20000,mean=20,sd=3)
+undergrads <- sample(studentPop,size=sampleSize,replace=TRUE)
+grads <- rnorm(sampleSize,mean=25,sd=3)
+if (runif(1)>0.5) { testSample <- grads } else { testSample <- undergrads }
+mean(testSample)
+```
+
+
+
+After you run this code, the variable ** testSample ** will contain either a sample of undergrads or a
+sample of grads. The line before last  flips a coin  by generating one value from a **uniform
+distribution** (by default the distribution covers 0 to 1) and comparing it to 0.5. The question you
+must answer with additional code is: Which is it, grad or undergrad?<br><br>
+Here are the steps that will help you finish the job:
+
+1. Copy	the	code	above and annotate it	with	line-by-line	commentary.	In	other	words,	you	must	explain what	
+each	of	the	seven	lines	of	code	above	actually	do!	You	will	have	to	lookup	the	meaning	of some	
+commands.
+
+```{r}
+
+```
+
+2. Generate 10	samples	from	the	** undergrads **	dataset.
+
+```{r}
+
+```
+
+3. Generate	10	new	samples	and	take	the	mean	of	that	sample
+
+```{r}
+
+```
+
+4. Repeat	this	process	3	times	(i.e.,	generate	a	sample	and	take	the	mean	3	times,	using	the
+replicate	function).
+
+```{r}
+
+```
+
+5. Generate	a	list	of	sample	means	from	the	population	called	** undergrads **
+How	many	sample	means	should	you	generate?	Really,	you	can	create	any	number	that	you
+want  	hundreds,	thousands,	whatever	 	but	I	suggest	for	ease	of	inspection	that	you generate just	100	means.	That	is	a	pretty	small	number,	but	it	makes	it	easy	to	think	about percentiles	
+and	ranks.
+
+```{r}
+
+```
+
+6. Once	you	have	your	list	of	sample	means	generated	from	**undergrads**,	the	trick	is	to compare	**mean(testSample)**	to	that	list	of	sample	means	and	see	where	it	falls.
+Is	it	in	the	middle	of	the	pack?	Far	out	toward	one	end?	<br>Here	is	one	hint	that	will	help	you: In	chapter	7,	the	**quantile()**	command	is	used	to	generate	percentiles	based	on	thresholds of	2.5%	and	97.5%.	Those	are	the	thresholds	we	want,	and	the	**quantile()**	command	will	help	you create	them.	
+
+```{r}
+
+```
+
+7. Your	code	should	have a	**print()**	statement	that	should	say	either,	 Sample	mean	is extreme, 	or,	
+ Sample	mean	is	not	extreme. 
+
+```{r}
+
+```
+
+8. Add	a	comment	stating	if	you	think	the	**testSample**	are	undergrad	students.	Explain	why	or why not.
+
+```{r}
+
+```
+
+9. Repeat	the	same	analysis	to	see	if	the	**testSample**	are	grad	students.
+
+```{r}
+
+```
+

@@ -1,0 +1,141 @@
+
+# Intro to Data Science - Lab 1
+##### Copyright 2022, Jeffrey Stanton and Jeffrey Saltz   Please do not post online.
+
+## Week 1 - Introduction to R
+
+```{r}
+# Enter your name here: 
+```
+
+### Please include nice comments. <br>
+ 
+### Attribution statement: (choose only one and delete the rest)
+
+```{r}
+# 1. I did this lab assignment by myself, with help from the book and the professor.
+# 2. I did this lab assignment with help from the book and the professor and these Internet sources:
+# 3. I did this lab assignment with help from <Name of another student> but did not cut and paste any code.
+```
+
+Each student should run R-Studio on their computer (or via https://rstudio.cloud/).
+Remember that R should always be installed before R-Studio (if you are not using
+rstudio.cloud or Google Colab)
+
+1. Add together all the numbers between 1 and 10 (inclusive). Take note of the result. Remember, every student should type and run the code on their machine.
+
+```{r}
+
+```
+
+2. Now	create	a	vector	of	data	that	contains	the	numbers	between	1	and	10
+(inclusive).	Here	is	a	line	of	code	to	do	that: <br>
+
+`myNumbers <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)`
+
+```{r}
+
+```
+
+3. Now add together all of the numbers that are in the vector **myNumbers**. There is a built-in function within R that can do this for you in one step: Take a guess as to the name of that function and run it on **myNumbers**. Check your result against the results of question 1.
+
+```{r}
+
+```
+
+4. R can do a powerful operation called ** vector math ** in which a calculation runs on every element of a vector. Try vector math on **myNumbers** by adding 10 to each element of myNumbers, and storing the result in **myNewNumbers**. Print out **myNewNumbers**.
+
+```{r}
+
+```
+
+5. Efficiently calculate a sum of the numbers between 11 and 20 (inclusive), using techniques from the problems above. **Hint:** use `c(11:20)`
+
+```{r}
+
+```
+
+6. Calculate a sum of all of the numbers between 1 and 100 (inclusive), using techniques from the problems above.
+
+```{r}
+
+```
+
+
+7. Make sure you have a variable **myNumbers**, that is a vector of 10 numbers (1,2,3,4,5,6,7,8,9,10)
+
+```{r}
+
+```
+
+8. Type the following commands in the code cells below and run each one: 
+
+<br>`mean(myNumbers)` <br>`median(myNumbers)` <br>`max(myNumbers)` <br>`min(myNumbers)` <br>`length(myNumbers)`
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+9. Repeat the commands from above, this time adding a comment to each line of code in your file explaining what it does. The comment character is  # .
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+10. In a comment, explain the output of the following command: <br> `myNumbers > 5`
+
+```{r}
+
+```
+
+11. Explain what in is **bigNum** after executing the following command: 
+
+`bigNum <- myNumbers[myNumbers > 5]`
+
+```{r}
+
+```
+
+12. Whenever you need R to explain what a command does and how it works, use the **?** command or the **help()** command. Add and run these commands: <br>
+`?mean` <br>`help("mean")`
+
+```{r}
+
+```
+
+```{r}
+
+```
+

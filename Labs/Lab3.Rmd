@@ -1,0 +1,156 @@
+
+# Intro to Data Science - Lab 3
+##### Copyright 2022, Jeffrey Stanton and Jeffrey Saltz   Please do not post online.
+
+## Week 3 - Using Descriptive Statistics & Writing Functions
+
+```{r}
+# Enter your name here: 
+```
+
+### Please include nice comments. <br>
+### Instructions: 
+Run the necessary code on your own instance of R-Studio.Save the
+code: It will be useful on your homework!
+
+### Attribution statement: (choose only one and delete the rest)
+
+```{r}
+# 1. I did this lab assignment by myself, with help from the book and the professor.
+# 2. I did this lab assignment with help from the book and the professor and these Internet sources:
+# 3. I did this lab assignment with help from <Name of another student> but did not cut and paste any code.
+```
+
+
+1. Get	an	explanation	of	the	contents	of	the	**state.x77**	data	set:<br>	`help("state.x77")`
+
+```{r}
+
+```
+
+2. Create	a	dataframe	from	the	built-in **state.x77**	data	set,	store	in	a	variable	named ** dfStates77 **
+
+```{r}
+
+```
+
+3. Summarize	the	variables	in	your	**dfStates77**	data	set	-	using	the	**summary()**
+function
+
+```{r}
+
+```
+
+4. Calculate	the	total	population	of	the	U.S. by	adding	together	the	populations	of
+each	of	the	individual	states	in	**dfStates77**.			Store	the	result	in	a	new	variable
+called	**totalPop77**.
+
+```{r}
+
+```
+
+5. Use	R	code	to	read	a	CSV	data	file	directly	from	the	web.	Store	the	dataset	into	a
+new	dataframe,	called	dfStates17.	The	URL	is:
+"https://intro-datascience.s3.us-east-2.amazonaws.com/statesNew.csv" <br>
+Note:	Use	the	function	**read_csv(	)**	to	read	in	the	data.
+You	will	need	to	run	`library(tidyverse)`	before	you	can	run **read_csv(	)**.		If	that	generates	an	error,	then	you	first	need	to	do <br>
+`install.packages("tidyverse")`
+
+```{r}
+
+```
+
+6. Summarize	the	variables	in	your	new	data	set,	using	the	**summary()** command.
+
+```{r}
+
+```
+
+7. The	data	you	now	have	stored	in	**dfStates17** were	collected	in	2017.	As	such,
+about	40	years	passed	between	the	two	data	collections.	Calculate	the	total	2017
+population	of	the	U.S.	in	**dfStates17**	by	adding	together	the	populations	of	each	of
+the	individual	states.	Store	the	result	in	a	new	variable	called	**totalPop17**.
+
+```{r}
+
+```
+
+8. Create	and	interpret	a	ratio	of	**totalPop77** to	**totalPop17**.	Check	to	ensure	that	the result	makes	sense!<br>
+
+Create	a	function	that,	given	population	and	area,	calculates	population	density	by	
+dividing	a	population	value	by	an	area	value.	Here	is	the	core	of	the	function:	<br>
+
+
+```
+popDensity <- function (pop, area) {
+ # Add your code below here:
+ # Next, divide pop by area and store the result in a
+ # variable called popDens
+ return(popDens) # This provides the function s output
+}
+```
+
+
+
+
+```{r}
+
+```
+
+9. After	you	finish	your	function,	make	sure	to	run	all	of	the	lines	of	code	in	it	so
+that	the	function	becomes	known	to	R.
+
+10. Make	a	fresh	copy	of	**state.x77**	into	**dfStates77**
+
+```{r}
+
+```
+
+11. Store	the	population	vector	in	a	variable	called	**tempPop**.	Adjust	the	**tempPop**	as
+needed	(based	on	your	analysis	above)
+
+```{r}
+
+```
+
+12. Store	the	area	vector	in	a	variable,	called	**tempArea**
+
+```{r}
+
+```
+
+13. Now	use	**tempPop**	and	tempArea	to	call	your	function:<br>
+`popDensity(tempPop,	tempArea)`
+
+```{r}
+
+```
+
+14. Store	the	results	from		the	previous	task	in	a	column	of	the	**dfStates77**
+dataframe,	called	**popDensity**.
+
+```{r}
+
+```
+
+15. Use	**which.max(	)**	and	**which.min(	)**	to	reveal	which	is	the	most	densely
+populated	and	which	is	the	least	densely	populated	state.	Make	sure	that	you
+understand	the	number	that	is	revealed	as	well	as	the	name	of	the	state.
+
+```{r}
+
+```
+
+16. Using	tidyverse,	sort	the	dataframe	using	the	**popDensity**	attribute,	then	using
+the	**slice()**	function,	show	the	first	row	in	the	sorted	database.
+
+```{r}
+
+```
+
+17. How	was	the	dataframe	sorted	(was	the	minimum	first	or	the	maximum)? Explain in a comment.
+
+```{r}
+
+```
+
